@@ -75,30 +75,49 @@ movies = [
 "category": "Romance"
 }
 ]
-
-def is_hight_imdb(movie):
-    return movie["imdb"]>5.5
-
-def podpiski(movies):
-    return [movie for movie in movies if movie["imdb"]>5.5]
-
-def bycategory(movies, category):
-    kol = []
+#Write a function that takes a single movie and returns True if its IMDB score is above 5.5
+def high_imdb(movie):
     for i in movies:
-        if(i["category"]==category):
-            kol.append(i["name"])
-    return kol
+        if i["name"]==movie:
+            return i["imdb"]>5.5
 
-def avg_score(movies):
-    score = [movie["imdb"] for movie in movies]
-    return sum(score)/len(score)
+print(high_imdb("We Two"))
+#Write a function that returns a sublist of movies with an IMDB score above 5.5.
 
-def avg_score_imdb(movies, category):
-    category_movies = bycategory(movies,category)
-    return avg_score(category_movies)
+def high_imdb_movie():
+    returns=[]
+    for i in movies:
+        if i["imdb"]>5.5:
+            returns.append(i["name"])
+    return returns
+print(high_imdb_movie())
+#Write a function that takes a category name and returns just those movies under that category.
+def category(category_name):
+    a=[]
+    for i in movies:
+        if i["category"]==category_name:
+            a.append(i["name"])
+    return a
 
-print(is_hight_imdb(movies[0]))
-print(podpiski(movies))
-print(bycategory(movies, "Romance"))
-print(avg_score(movies))
-print(avg_score_imdb(movies,"Romance"))
+print(category("Romance"))
+#Write a function that takes a list of movies and computes the average IMDB score.
+def avg():
+    summa=0
+    cnt=0
+    for i in movies:
+        cnt+=1
+        summa+=i["imdb"]
+    return summa/cnt
+
+print(avg())
+#Write a function that takes a category and computes the average IMDB score.
+def avg_for_category(category):
+    cnt=0
+    summa=0
+    for i in movies:
+        if i["category"]==category:
+            cnt+=1
+            summa+=i["imdb"]
+    return summa/cnt
+
+print(avg_for_category("Comedy"))
