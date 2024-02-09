@@ -36,7 +36,7 @@ class Rectangle(Shape):
         self.length = length
         self.width=width
     def area(self):
-        peint(self.length * self.width)
+        print(self.length * self.width)
 
 ##rec = Rectangle(int(input()))
 ##rec.area()
