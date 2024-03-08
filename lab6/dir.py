@@ -1,6 +1,6 @@
 import os
 
-path = 'C:\Users\user\Desktop\pp1\TSIS6\text.txt'
+path = 'C:\Users\kbasa\Desktop\PP2 all labs\lab 6\text.txt'
 
 #Exercise 1
 print("Only directories:")
